@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+.kitty-gradient {
+  background: linear-gradient(135deg, #FFC0CB 0%, #FF69B4 100%);
+}
+
+.loading-spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.card-hover {
+  transition: transform 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+}
+
+.kitty-bow {
+  position: relative;
+  display: inline-block;
+}
+
+.kitty-bow:before,
+.kitty-bow:after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: #FF0000;
+  border-radius: 50%;
+  top: -5px;
+}
+
+.kitty-bow:before {
+  left: -8px;
+}
+
+.kitty-bow:after {
+  right: -8px;
+}
+
+.kitty-whisker {
+  position: relative;
+}
+
+.kitty-whisker:before,
+.kitty-whisker:after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 1px;
+  background: #000000;
+  top: 50%;
+}
+
+.kitty-whisker:before {
+  left: -25px;
+  transform: rotate(-15deg);
+}
+
+.kitty-whisker:after {
+  right: -25px;
+  transform: rotate(15deg);
+}
