@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BiUpload, BiArrowRepeat } from 'react-icons/bi';
+import { BiUpload } from 'react-icons/bi';
 
 function Upload() {
   const [file, setFile] = useState(null);

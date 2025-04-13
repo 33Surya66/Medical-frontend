@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import React from 'react';
 import Nav from './components/Nav';
 import Hero from './components/Hero';
 import Features from './components/Features';
@@ -14,6 +15,7 @@ import SignInModal from './components/SignInModal';
 import SignUpModal from './components/SignUpModal';
 
 function App() {
+
   const [isSignInOpen, setIsSignInOpen] = useState(false);
   const [isSignUpOpen, setIsSignUpOpen] = useState(false);
   const [isDark, setIsDark] = useState(false);
@@ -22,36 +24,37 @@ function App() {
     setIsDark(!isDark);
   };
 
+
   return (
     <div className={`${isDark ? 'bg-gray-800' : 'bg-browncoffee'} min-h-screen text-white`}>
-      <Nav setIsSignInOpen={setIsSignInOpen} toggleTheme={toggleTheme} isDark={isDark} />
-      <Hero />
-      <Features />
-      <About />
-      <Analyze />
-      <Stats />
-      <HowItWorks />
-      <Upload />
-      <Contact />
-      <FAQ />
-      <Footer />
-      <SignInModal
-        isOpen={isSignInOpen}
-        setIsOpen={setIsSignInOpen}
-        openSignUp={() => {
-          setIsSignInOpen(false);
-          setIsSignUpOpen(true);
-        }}
-      />
-      <SignUpModal
-        isOpen={isSignUpOpen}
-        setIsOpen={setIsSignUpOpen}
-        openSignIn={() => {
-          setIsSignUpOpen(false);
-          setIsSignInOpen(true);
-        }}
-      />
-    </div>
+    <Nav setIsSignInOpen={setIsSignInOpen} toggleTheme={toggleTheme} isDark={isDark} />
+    <Hero />
+    <Features />
+    <About />
+    <Analyze />
+    <Stats />
+    <HowItWorks />
+    <Upload />
+    <Contact />
+    <FAQ />
+    <Footer />
+    <SignInModal
+      isOpen={isSignInOpen}
+      setIsOpen={setIsSignInOpen}
+      openSignUp={() => {
+        setIsSignInOpen(false);
+        setIsSignUpOpen(true);
+      }}
+    />
+    <SignUpModal
+      isOpen={isSignUpOpen}
+      setIsOpen={setIsSignUpOpen}
+      openSignIn={() => {
+        setIsSignUpOpen(false);
+        setIsSignInOpen(true);
+      }}
+    />
+  </div>
   );
 }
 
